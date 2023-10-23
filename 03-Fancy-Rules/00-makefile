@@ -1,0 +1,10 @@
+CC = clang #Setting up flag for implicit rule
+CFLAGS = -g #The same as previous
+
+# Here is implicit two implicit rules:
+# 1) impl target will be implicitly linked with make's link rule
+# 2) impl.o prerequisit will be implicitly compiled with make's compile rule
+impl: impl.o
+
+clean:
+	rm -f impl impl.o
